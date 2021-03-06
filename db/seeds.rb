@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require('faker')
+
+5.times do 
+  Store.create(name: Faker::Company.name, location: Faker::Address.state, hours: rand(4...24))
+end
+
+puts "DB Seeded"
